@@ -18,19 +18,27 @@
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "rollup -c",
-    "lint": "eslint 'src/**/*.js'",
-    "lint:fix": "prettier-eslint 'src/**/*.js' --write"
+    "lint": "eslint '**/*.js'",
+    "lint:fix": "prettier-eslint '**/*.js' --write"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.3.4",
     "eslint": "^5.15.2",
     "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-preact": "^1.1.6",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^4.0.0",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
-    "rollup": "^1.6.0"
+    "rollup": "^1.6.0",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^4.0.1"
+  },
+  "dependencies": {
+    "preact": "^10.0.0-alpha.2"
   }
 }

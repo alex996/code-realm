@@ -1,3 +1,6 @@
+import resolve from 'rollup-plugin-node-resolve'
+import babel from 'rollup-plugin-babel'
+
 const build = 'build'
 
 export default {
@@ -5,5 +8,11 @@ export default {
   output: {
     file: `${build}/bundle.js`,
     format: 'iife'
-  }
+  },
+  plugins: [
+    resolve(),
+    babel({
+      exclude: 'node_modules/**'
+    })
+  ]
 }
