@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/alex996/code-realm#readme",
   "scripts": {
+    "start": "rollup -c -w",
     "prebuild": "rm -rf build",
     "build": "rollup -c",
     "lint": "eslint '**/*.js'",
@@ -41,7 +42,9 @@
     "prettier-eslint-cli": "^4.7.1",
     "rollup": "^1.6.0",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-node-resolve": "^4.0.1"
+    "rollup-plugin-copy-glob": "^0.3.0",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-terser": "^4.0.4"
   },
   "husky": {
     "hooks": {
