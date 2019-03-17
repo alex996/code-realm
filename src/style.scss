@@ -3,6 +3,15 @@
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/base/_all.sass";
 
+@import "~bulma/sass/components/navbar.sass";
+
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/button.sass";
+
 html {
   overflow: hidden;
+}
+
+.container {
+  max-width: 800px;
 }
