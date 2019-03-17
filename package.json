@@ -24,6 +24,7 @@
     "serve": "serve build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "bulma": "^0.7.4",
     "preact": "^10.0.0-alpha.2"
   },
@@ -52,6 +53,7 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-serve": "^1.0.1",
     "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-url": "^2.2.0",
     "serve": "^10.1.2"
   },
   "husky": {

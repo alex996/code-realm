@@ -1,12 +1,14 @@
 @charset "utf-8";
 
 @import "~bulma/sass/utilities/_all.sass";
+
 @import "~bulma/sass/base/_all.sass";
 
-@import "~bulma/sass/components/navbar.sass";
-
-@import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/icon.sass";
+
+@import "~bulma/sass/components/navbar.sass";
 
 html {
   overflow: hidden;
@@ -14,4 +16,24 @@ html {
 
 .container {
   max-width: 800px;
+}
+
+.navbar {
+  .navbar-start {
+    margin-left: 0.5rem;
+
+    .navbar-item {
+      .icon {
+        margin: 0;
+
+        @include until($desktop) {
+          margin-right: 1rem;
+        }
+
+        img {
+          height: 1.25rem;
+        }
+      }
+    }
+  }
 }
