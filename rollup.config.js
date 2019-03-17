@@ -26,7 +26,7 @@ export default {
       extract: `${dest}/style.css`,
       minimize: prod
     }),
-    copy([{ files: 'index.html', dest }], { verbose: true, watch: dev }),
+    copy([{ files: 'index.html', dest }], { watch: dev }),
     dev &&
       serve({
         open: true,
