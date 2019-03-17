@@ -1,3 +1,4 @@
+import json from 'rollup-plugin-json'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import copy from 'rollup-plugin-copy-glob'
@@ -18,6 +19,7 @@ export default {
     sourcemap: true
   },
   plugins: [
+    json(),
     resolve(),
     babel({
       exclude: 'node_modules/**'
@@ -34,10 +36,7 @@ export default {
         contentBase: dest,
         historyApiFallback: true
       }),
-    dev &&
-      livereload({
-        watch: dest
-      }),
+    dev && livereload(),
     prod && terser()
   ]
 }
