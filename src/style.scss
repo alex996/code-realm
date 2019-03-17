@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+$red: #f34423;
+
+$primary: $red;
+
 @import "~bulma/sass/utilities/_all.sass";
 
 @import "~bulma/sass/base/_all.sass";
@@ -7,8 +11,11 @@
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/icon.sass";
+@import "~bulma/sass/elements/title.sass";
 
 @import "~bulma/sass/components/navbar.sass";
+
+@import "~bulma/sass/layout/hero.sass";
 
 html {
   overflow: hidden;
@@ -34,6 +41,14 @@ html {
           height: 1.25rem;
         }
       }
+    }
+  }
+}
+
+.hero {
+  .hero-body {
+    .title.is-spaced {
+      margin-bottom: 0.75rem;
     }
   }
 }
