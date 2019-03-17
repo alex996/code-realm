@@ -32,7 +32,7 @@ export default {
       extract: `${dest}/style.css`,
       minimize: prod
     }),
-    copy([{ files: 'index.html', dest }], { watch: dev }),
+    copy([{ files: 'static/*', dest }], { watch: dev }),
     dev &&
       serve({
         open: true,
