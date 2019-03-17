@@ -11,28 +11,43 @@ $primary: $red;
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/icon.sass";
+@import "~bulma/sass/elements/tag.sass";
 @import "~bulma/sass/elements/title.sass";
 
 @import "~bulma/sass/components/navbar.sass";
 
 @import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/layout/section.sass";
+
+$maxWidth: 700px;
 
 html {
-  overflow: hidden;
+  overflow: auto;
+}
+
+hr {
+  @include until($maxWidth) {
+    margin: 0 $size-6;
+  }
+  @include from($maxWidth) {
+    margin: 0;
+  }
 }
 
 .container {
-  max-width: 800px;
+  max-width: $maxWidth;
 }
 
 .navbar {
+  @include from($maxWidth) {
+    margin-top: 1rem;
+  }
+
   .navbar-start {
     margin-left: 0.5rem;
 
     .navbar-item {
       .icon {
-        margin: 0;
-
         @include until($desktop) {
           margin-right: 1rem;
         }
@@ -45,10 +60,38 @@ html {
   }
 }
 
-.hero {
-  .hero-body {
-    .title.is-spaced {
-      margin-bottom: 0.75rem;
+// .hero {
+//   .hero-body {
+//     .title.is-spaced {
+//       margin-bottom: $size-6;
+//     }
+//   }
+// }
+
+.post {
+  &:first-child {
+    margin-top: 1rem;
+  }
+  margin-bottom: 4rem;
+
+  .title {
+    margin-bottom: $size-5;
+  }
+
+  .subtitle {
+    margin-bottom: $size-7;
+  }
+
+  .caption {
+    align-items: center;
+    font-size: 0.9rem;
+
+    .separator {
+      padding: 0 0.35rem;
+    }
+
+    .tags {
+      flex: 1;
     }
   }
 }
