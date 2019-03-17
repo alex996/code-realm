@@ -1,6 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import copy from 'rollup-plugin-copy-glob'
+import postcss from 'rollup-plugin-postcss'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
@@ -20,6 +21,10 @@ export default {
     resolve(),
     babel({
       exclude: 'node_modules/**'
+    }),
+    postcss({
+      extract: `${dest}/style.css`,
+      minimize: prod
     }),
     copy([{ files: 'index.html', dest }], { verbose: true, watch: dev }),
     dev &&
