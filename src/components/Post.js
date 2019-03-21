@@ -7,19 +7,21 @@ const Post = ({ slug, title, subtitle, createdAt, minsToRead, tags }) => (
     </a>
     <h4 class='subtitle is-size-6'>{subtitle}</h4>
 
-    <div class='caption has-text-grey is-flex'>
-      <span>{createdAt}</span>
+    <div class='caption has-text-grey is-small is-flex'>
+      <span class='item'>{createdAt}</span>
 
       <span class='separator'>&bull;</span>
 
-      <span>{minsToRead} mins</span>
+      <span class='item'>{minsToRead} mins</span>
 
       <span class='separator'>&bull;</span>
 
-      <div class='tags is-normal'>
-        {tags.map(tag => (
-          <span class='tag is-rounded'>{tag}</span>
-        ))}
+      <div class='item'>
+        <div class='tags'>
+          {tags.map(tag => (
+            <span class='tag is-rounded'>{tag}</span>
+          ))}
+        </div>
       </div>
     </div>
   </article>

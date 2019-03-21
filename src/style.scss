@@ -10,6 +10,7 @@ $primary: $red;
 
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/content.sass";
 @import "~bulma/sass/elements/icon.sass";
 @import "~bulma/sass/elements/tag.sass";
 @import "~bulma/sass/elements/title.sass";
@@ -20,6 +21,8 @@ $primary: $red;
 @import "~bulma/sass/layout/section.sass";
 
 $maxWidth: 700px;
+
+$size-8: 0.5rem;
 
 html {
   overflow: auto;
@@ -44,7 +47,7 @@ hr {
   }
 
   .navbar-start {
-    margin-left: 0.5rem;
+    margin-left: $size-8;
 
     .navbar-item {
       .icon {
@@ -61,23 +64,48 @@ hr {
 }
 
 .post {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 
-  .title,
-  .subtitle {
-    margin-bottom: $size-6;
+  .title {
+    margin-bottom: $size-5;
   }
 
-  .caption {
-    align-items: center;
-    font-size: 0.9rem;
+  .subtitle {
+    margin-bottom: $size-7;
+  }
+}
 
-    .separator {
-      padding: 0 0.35rem;
+.post-page {
+  .hero {
+    .subtitle {
+      margin-bottom: $size-5;
+    }
+  }
+
+  .section {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .content {
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+.post,
+.post-page {
+  .caption {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -$size-8;
+
+    .item {
+      padding: $size-8;
     }
 
-    .tags {
-      flex: 1;
+    &.is-small {
+      font-size: 0.9rem;
     }
   }
 }

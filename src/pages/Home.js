@@ -5,7 +5,7 @@ const posts = [
   {
     slug: 'building-a-library-with-next-gen-js',
     title: 'Building a library with next-gen JS',
-    subtitle: 'Jumping through hoops with Mongoose',
+    subtitle: `You don't need Webpack at all`,
     createdAt: 'Mar 17, 2019',
     minsToRead: 10,
     tags: ['JavaScript', 'Babel']
