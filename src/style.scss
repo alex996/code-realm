@@ -30,7 +30,7 @@ hr {
     margin: 0 $size-6;
   }
   @include from($maxWidth) {
-    margin: 0;
+    margin: $size-6 0;
   }
 }
 
@@ -40,7 +40,7 @@ hr {
 
 .navbar {
   @include from($maxWidth) {
-    margin-top: 1rem;
+    margin-top: $size-6;
   }
 
   .navbar-start {
@@ -49,37 +49,23 @@ hr {
     .navbar-item {
       .icon {
         @include until($desktop) {
-          margin-right: 1rem;
+          margin-right: $size-6;
         }
 
         img {
-          height: 1.25rem;
+          height: $size-5;
         }
       }
     }
   }
 }
 
-// .hero {
-//   .hero-body {
-//     .title.is-spaced {
-//       margin-bottom: $size-6;
-//     }
-//   }
-// }
-
 .post {
-  &:first-child {
-    margin-top: 1rem;
-  }
   margin-bottom: 4rem;
 
-  .title {
-    margin-bottom: $size-5;
-  }
-
+  .title,
   .subtitle {
-    margin-bottom: $size-7;
+    margin-bottom: $size-6;
   }
 
   .caption {
