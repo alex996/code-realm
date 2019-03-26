@@ -24,7 +24,7 @@
     "serve": "serve build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.0",
+    "@fortawesome/fontawesome-free": "^5.8.1",
     "bulma": "^0.7.4",
     "preact": "^10.0.0-alpha.2",
     "preact-router": "^3.0.0"
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-env": "^7.4.2",
     "eslint": "^5.15.3",
     "eslint-config-standard": "^12.0.0",
     "eslint-config-standard-preact": "^1.1.6",
@@ -45,7 +45,7 @@
     "node-sass": "^4.11.0",
     "prettier-eslint": "^8.8.2",
     "prettier-eslint-cli": "^4.7.1",
-    "rollup": "^1.7.0",
+    "rollup": "^1.7.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-copy-glob": "^0.3.0",
     "rollup-plugin-json": "^4.0.0",
