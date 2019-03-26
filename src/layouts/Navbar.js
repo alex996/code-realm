@@ -47,7 +47,7 @@ const Navbar = props => {
       <div class='container'>
         <div class='navbar-brand'>
           <a class='navbar-item' href='/'>
-            <img src={logo} alt='Code Realm' />
+            <img src={`/${logo}`} alt='Code Realm' />
           </a>
 
           <a

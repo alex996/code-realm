@@ -3,7 +3,7 @@ import { Post } from '../components'
 
 const posts = [
   {
-    slug: 'building-a-library-with-next-gen-js',
+    path: '/blog/building-a-library-with-next-gen-js',
     title: 'Building a library with next-gen JS',
     subtitle: `You don't need Webpack at all`,
     createdAt: 'Mar 17, 2019',
@@ -11,7 +11,7 @@ const posts = [
     tags: ['JavaScript', 'Babel']
   },
   {
-    slug: 'jumping-through-hoops-with-mongoose',
+    path: '/blog/jumping-through-hoops-with-mongoose',
     title: 'Jumping through hoops with Mongoose',
     subtitle: 'From quirky validation and model hooks to faulty unique indexes',
     createdAt: 'Mar 15, 2019',
@@ -19,7 +19,7 @@ const posts = [
     tags: ['Mongoose', 'Node.js']
   },
   {
-    slug: 'building-a-microsite-with-latest-js',
+    path: '/blog/building-a-microsite-with-latest-js',
     title: 'Building a microsite with latest JS',
     subtitle: `You don't need a macroframework like React`,
     createdAt: 'Mar 12, 2019',

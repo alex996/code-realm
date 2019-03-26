@@ -1,7 +1,7 @@
 import { h, Fragment } from 'preact'
 import Router from 'preact-router'
 import { Navbar } from './layouts'
-import { Home, Post } from './pages'
+import { Home, Post, NotFound } from './pages'
 
 const App = props => (
   <Fragment>
@@ -11,7 +11,8 @@ const App = props => (
     <main>
       <Router>
         <Home path='/' />
-        <Post default />
+        <Post path='/blog/:slug' />
+        <NotFound default />
       </Router>
     </main>
   </Fragment>

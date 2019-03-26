@@ -1,8 +1,8 @@
 import { h } from 'preact'
 
-const Post = ({ slug, title, subtitle, createdAt, minsToRead, tags }) => (
+const Post = ({ path, title, subtitle, createdAt, minsToRead, tags }) => (
   <article class='post'>
-    <a href={`/${slug}`}>
+    <a href={path}>
       <h3 class='title is-size-4 is-spaced'>{title}</h3>
     </a>
     <h4 class='subtitle is-size-6'>{subtitle}</h4>
