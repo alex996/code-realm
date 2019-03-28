@@ -1,14 +1,13 @@
 import { h, Fragment } from 'preact'
-import { useState, useEffect } from 'preact/hooks'
+import { useEffect } from 'preact/hooks'
+import { connect, actions } from '../store'
 import { Post } from '../components'
 
-const Home = props => {
-  const [posts, setPosts] = useState([])
-
-  useEffect(async () => {
-    const posts = await (await fetch('/blog/index.json')).json()
-
-    setPosts(posts)
+const Home = ({ posts, fetchPosts }) => {
+  useEffect(() => {
+    if (!posts.length) {
+      fetchPosts()
+    }
   }, [])
 
   return (
@@ -35,4 +34,7 @@ const Home = props => {
   )
 }
 
-export default Home
+export default connect(
+  'posts',
+  actions
+)(Home)

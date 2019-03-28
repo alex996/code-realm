@@ -27,7 +27,8 @@
     "@fortawesome/fontawesome-free": "^5.8.1",
     "bulma": "^0.7.4",
     "preact": "^10.0.0-alpha.2",
-    "preact-router": "^3.0.0"
+    "preact-router": "^3.0.0",
+    "unistore": "^3.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
