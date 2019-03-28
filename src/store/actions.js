@@ -6,6 +6,14 @@ const actions = store => ({
       ...state,
       posts
     }
+  },
+  async fetchPost (state, slug) {
+    const post = await (await fetch(`/blog/${slug}.json`)).json()
+
+    return {
+      ...state,
+      postDetails: [...state.postDetails, post]
+    }
   }
 })
 

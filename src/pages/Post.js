@@ -1,22 +1,20 @@
 import { h } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
+import { connect, actions } from '../store'
 import NotFound from './404'
 
-const Post = ({ url }) => {
-  const [post, setPost] = useState()
+const Post = ({ slug, post, fetchPost }) => {
   const [error, setError] = useState()
 
   useEffect(async () => {
-    try {
-      const post = await (await fetch(`${url}.json`)).json()
-
-      setPost(post)
-    } catch (e) {
-      console.error(e)
-
-      setError(e)
+    if (!post) {
+      try {
+        await fetchPost(slug)
+      } catch (e) {
+        setError(e)
+      }
     }
-  }, [url])
+  }, [slug])
 
   if (error) {
     return <NotFound />
@@ -66,4 +64,11 @@ const Post = ({ url }) => {
   )
 }
 
-export default Post
+const mapStateToProps = (state, props) => ({
+  post: state.postDetails.find(post => post.slug === props.slug)
+})
+
+export default connect(
+  mapStateToProps,
+  actions
+)(Post)
