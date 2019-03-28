@@ -64,19 +64,35 @@ hr {
 }
 
 .post {
-  margin-bottom: 3rem;
+  &.post-preview {
+    margin-bottom: 3rem;
 
-  .title {
-    margin-bottom: $size-5;
+    .title {
+      margin-bottom: $size-5;
+    }
+
+    .subtitle {
+      margin-bottom: $size-7;
+    }
   }
 
-  .subtitle {
-    margin-bottom: $size-7;
+  .caption {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -$size-8;
+
+    .item {
+      padding: $size-8;
+    }
+
+    &.is-small {
+      font-size: 0.9rem;
+    }
   }
 }
 
 .post-page {
-  .hero {
+  .post {
     .subtitle {
       margin-bottom: $size-5;
     }
@@ -89,23 +105,6 @@ hr {
     .content {
       font-size: 1.1rem;
       line-height: 1.8;
-    }
-  }
-}
-
-.post,
-.post-page {
-  .caption {
-    flex-wrap: wrap;
-    align-items: center;
-    margin-left: -$size-8;
-
-    .item {
-      padding: $size-8;
-    }
-
-    &.is-small {
-      font-size: 0.9rem;
     }
   }
 }

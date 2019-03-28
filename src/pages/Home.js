@@ -26,7 +26,7 @@ const Home = ({ posts, fetchPosts }) => {
       <section class='section'>
         <div class='container'>
           {posts.map(post => (
-            <Post {...post} />
+            <Post {...post} preview />
           ))}
         </div>
       </section>
