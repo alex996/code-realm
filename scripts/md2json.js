@@ -1,3 +1,4 @@
+const readingTime = require('reading-time')
 const unified = require('unified')
 const markdown = require('remark-parse')
 const frontmatter = require('remark-frontmatter')
@@ -6,12 +7,18 @@ const remark2rehype = require('remark-rehype')
 const html = require('rehype-stringify')
 const minify = require('rehype-preset-minify')
 const fs = require('fs').promises
+const path = require('path')
 
 ;(async () => {
   const posts = []
 
-  const metadata = () => tree => {
-    posts.push(tree.children[0].data.parsedValue)
+  const metadata = () => (tree, vfile) => {
+    const { minutes } = readingTime(String(vfile))
+
+    posts.push({
+      ...tree.children[0].data.parsedValue,
+      minsToRead: Math.round(minutes)
+    })
   }
 
   const processor = unified()
@@ -40,7 +47,9 @@ const fs = require('fs').promises
 
     const data = JSON.stringify(post)
 
-    return fs.writeFile(`${outputDir}/${filename}.json`, data, 'utf-8')
+    const pathname = `${outputDir}/${path.basename(filename, '.md')}.json`
+
+    return fs.writeFile(pathname, data, 'utf-8')
   })
 
   await Promise.all(ops)
