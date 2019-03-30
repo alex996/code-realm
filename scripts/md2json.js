@@ -8,16 +8,19 @@ const html = require('rehype-stringify')
 const minify = require('rehype-preset-minify')
 const fs = require('fs').promises
 const path = require('path')
+const fecha = require('fecha')
 
 ;(async () => {
   const posts = []
 
   const metadata = () => (tree, vfile) => {
+    const { parsedValue } = tree.children[0].data
     const { minutes } = readingTime(String(vfile))
 
     posts.push({
-      ...tree.children[0].data.parsedValue,
-      minsToRead: Math.round(minutes)
+      ...parsedValue,
+      readingTime: `${Math.ceil(minutes)} min${minutes > 1 ? 's' : ''}`,
+      createdAt: fecha.format(parsedValue.createdAt, 'MMM D, YYYY')
     })
   }
 
