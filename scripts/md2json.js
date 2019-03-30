@@ -31,7 +31,7 @@ const path = require('path')
     .use(minify)
 
   const inputDir = 'content'
-  const outputDir = 'json'
+  const outputDir = 'build/blog'
 
   const [filenames] = await Promise.all([
     await fs.readdir(inputDir),
@@ -43,16 +43,20 @@ const path = require('path')
 
     const file = await processor.process(buffer)
 
+    const basename = path.basename(filename, '.md')
+
+    const pathname = `${outputDir}/${basename}.json`
+
+    posts[index].slug = basename
+
     const post = { ...posts[index], body: String(file) }
 
-    const data = JSON.stringify(post)
-
-    const pathname = `${outputDir}/${path.basename(filename, '.md')}.json`
-
-    return fs.writeFile(pathname, data, 'utf-8')
+    return fs.writeFile(pathname, JSON.stringify(post), 'utf-8')
   })
 
   await Promise.all(ops)
+
+  await fs.writeFile(`${outputDir}/index.json`, JSON.stringify(posts), 'utf-8')
 
   console.log('Done')
 })()
