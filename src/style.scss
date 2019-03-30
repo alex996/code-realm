@@ -73,6 +73,7 @@ hr {
 
     .subtitle {
       margin-bottom: $size-7;
+      font-size: 1.15rem;
     }
   }
 
@@ -83,10 +84,6 @@ hr {
 
     .item {
       padding: $size-8;
-    }
-
-    &.is-small {
-      font-size: 0.9rem;
     }
   }
 }
@@ -100,7 +97,6 @@ hr {
 
   .section {
     padding-top: 0;
-    padding-bottom: 0;
 
     .content {
       font-size: 1.1rem;

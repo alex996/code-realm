@@ -7,26 +7,38 @@ const Post = ({
   title,
   subtitle,
   createdAt,
-  minsToRead,
+  readingTime,
   tags,
   preview
 }) => {
-  const heading = (
-    <h3 class={clsx('title is-spaced', preview && 'is-size-4')}>{title}</h3>
-  )
+  const titleProps = {
+    class: clsx('title is-spaced', preview && 'is-size-4'),
+    children: title
+  }
+
+  const subtitleProps = {
+    class: 'subtitle',
+    children: subtitle
+  }
 
   return (
     <article class={clsx('post', preview && 'post-preview')}>
-      {preview ? <a href={`/${prefix}/${slug}`}>{heading}</a> : heading}
+      {preview ? (
+        <a href={`/${prefix}/${slug}`}>
+          <h3 {...titleProps} />
+        </a>
+      ) : (
+        <h1 {...titleProps} />
+      )}
 
-      <h4 class={clsx('subtitle', preview && 'is-size-6')}>{subtitle}</h4>
+      {preview ? <h4 {...subtitleProps} /> : <h2 {...subtitleProps} />}
 
-      <div class={clsx('caption has-text-grey is-flex', preview && 'is-small')}>
+      <div class='caption has-text-grey is-flex'>
         <span class='item'>{createdAt}</span>
 
         <span class='separator'>&bull;</span>
 
-        <span class='item'>{minsToRead} mins</span>
+        <span class='item'>{readingTime}</span>
 
         <span class='separator'>&bull;</span>
 
