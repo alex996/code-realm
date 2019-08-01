@@ -1,9 +1,9 @@
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
-import html from 'rollup-plugin-generate-html-template'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
+import html from './rollup-plugin-html'
 
 const development = process.env.ROLLUP_WATCH
 
@@ -17,7 +17,7 @@ export default {
   input: 'src/index.tsx',
   output: {
     dir: dist,
-    entryFileNames: 'main.[hash].js',
+    entryFileNames: production ? 'main.[hash].js' : 'main.js',
     format: 'iife',
     sourcemap: true
   },
@@ -30,7 +30,9 @@ export default {
       exclude: 'node_modules/**'
     }),
     html({
-      template: 'index.html'
+      template: 'index.html',
+      attributes: ['defer'],
+      minify: production
     }),
     development &&
       serve({
