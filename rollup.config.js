@@ -4,7 +4,7 @@ import babel from 'rollup-plugin-babel'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
-import { html } from './plugins'
+import { html } from './rollup-plugin-html'
 
 const development = process.env.ROLLUP_WATCH
 

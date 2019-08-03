@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import path from 'path'
 
-const html = ({
+export const html = ({
   template,
   filename = 'index.html',
   attributes = [],
@@ -39,5 +39,3 @@ const html = ({
     console.log(`\ncreated ${dir}/${filename}\n`)
   }
 })
-
-export default html
