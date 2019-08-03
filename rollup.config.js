@@ -1,4 +1,5 @@
 // TODO: see progress on TS in rollup/rollup#2879
+import copy from 'rollup-plugin-copy'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import serve from 'rollup-plugin-serve'
@@ -23,6 +24,10 @@ export default {
     sourcemap: true
   },
   plugins: [
+    copy({
+      targets: [{ src: 'static/favicon.ico', dest: dist }],
+      copyOnce: true
+    }),
     resolve({
       extensions
     }),
@@ -31,7 +36,7 @@ export default {
       exclude: 'node_modules/**'
     }),
     html({
-      template: 'index.html',
+      template: 'static/index.html',
       attributes: ['defer'],
       minify: production
     }),
