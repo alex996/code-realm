@@ -1,6 +1,6 @@
 # code-realm
 
-Modern web dev blog.
+Web development with modern JS.
 
 ## TODO
 
@@ -24,6 +24,7 @@ Modern web dev blog.
 - filter posts by tag(s)
 - search box
 - infinite scroll (load more)
+- Disqus / Commento comments
 - dark/light mode switch
 
 ## Tech
