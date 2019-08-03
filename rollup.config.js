@@ -1,9 +1,10 @@
+// TODO: see progress on TS in rollup/rollup#2879
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
-import html from './rollup-plugin-html'
+import { html } from './plugins'
 
 const development = process.env.ROLLUP_WATCH
 

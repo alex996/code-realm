@@ -1,5 +1,7 @@
 *log
 
+content/**/*.md
+
 dist
 
 node_modules

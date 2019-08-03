@@ -9,6 +9,7 @@ Web development with modern JS.
 - minify & tree-shake CSS
 - commitlint (?)
 - lint + format + unit test -> CircleCI (?)
+- `rollup.config.js` & `/sripts` -> TS
 
 ## MVP
 
