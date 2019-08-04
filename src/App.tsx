@@ -1,3 +1,4 @@
+import logo from './logo.png'
 import { h, Fragment, JSX } from 'preact'
 
 const App = (): JSX.Element => (
@@ -18,6 +19,7 @@ const App = (): JSX.Element => (
       </nav>
     </header>
     <main>
+      <img src={logo} />
       <section>
         <h1>Code Realm</h1>
         <h2>Modern web development blog</h2>

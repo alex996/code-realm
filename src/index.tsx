@@ -1,3 +1,4 @@
+import './style.scss'
 import { h, render } from 'preact'
 import App from './App'
 

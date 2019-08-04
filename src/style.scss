@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+$red: #f34423;
+
+$primary: $red;
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@import "~bulma/sass/base/_all.sass";
