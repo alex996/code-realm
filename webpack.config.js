@@ -78,7 +78,10 @@ module.exports = (env, { mode }) => {
       open: true,
       port: 3000,
       compress: true,
-      historyApiFallback: true
+      historyApiFallback: true,
+      proxy: {
+        '/blog': 'http://localhost:5000'
+      }
     }
   }
 }
