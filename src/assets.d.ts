@@ -2,3 +2,5 @@
 // See https://stackoverflow.com/a/52760666
 
 declare module '*.png'
+
+declare module '*.svg'

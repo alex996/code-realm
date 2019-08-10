@@ -10,6 +10,7 @@ $primary: $red;
 
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/icon.sass";
 
 @import "~bulma/sass/components/navbar.sass";
 
@@ -20,10 +21,20 @@ html {
 .navbar {
   .navbar-brand {
     .navbar-item:first-child {
-      padding: 0 $size-7;
+      @include from($desktop) {
+        padding: 0 $size-7;
 
+        img {
+          max-height: $size-2;
+        }
+      }
+    }
+  }
+
+  .navbar-item {
+    .icon {
       img {
-        max-height: 2.5rem;
+        height: $size-5;
       }
     }
   }

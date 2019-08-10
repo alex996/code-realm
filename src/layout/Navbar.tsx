@@ -1,28 +1,56 @@
 import { h, JSX } from 'preact'
 import { useState } from 'preact/hooks'
-import logo from '../logo.png'
+import {
+  SvgIcon,
+  YouTube,
+  GitHub,
+  StackOverflow,
+  Medium,
+  Minds
+} from '../icons'
 import { homepage, version } from '../../package.json'
+import logo from '../logo.png'
 
 const links = [
   {
+    href: '#',
+    text: 'Blog'
+  },
+  {
+    href: '#',
+    text: 'Projects'
+  },
+  {
+    href: '#',
+    text: 'About'
+  }
+]
+
+const social = [
+  {
     href: 'https://www.youtube.com/c/CodeRealm',
-    text: 'YouTube'
+    text: 'YouTube',
+    icon: YouTube
   },
   {
     href: 'https://github.com/alex996',
-    text: 'GitHub'
+    text: 'GitHub',
+    icon: GitHub
   },
   {
     href: 'https://stackoverflow.com/users/5610777/alex',
-    text: 'StackOverflow'
+    text: 'StackOverflow',
+    icon: StackOverflow
   },
   {
     href: 'https://medium.com/@coderealm',
-    text: 'Medium'
+    text: 'Medium',
+    icon: Medium
   },
   {
     href: 'https://www.minds.com/CodeRealm',
-    text: 'Minds'
+    text: 'Minds',
+    icon: Minds
   }
 ]
 
@@ -43,8 +71,8 @@ const Navbar = (): JSX.Element => {
           <img src={logo} alt='Code Realm' />
         </a>
 
-        {links.map(
-          ({ href }, index): JSX.Element => (
+        {social.map(
+          ({ href, icon, text }, index): JSX.Element => (
             <a
               key={index}
               href={href}
@@ -52,7 +80,7 @@ const Navbar = (): JSX.Element => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              i
+              <SvgIcon src={icon} alt={text} />
             </a>
           )
         )}
@@ -74,20 +102,26 @@ const Navbar = (): JSX.Element => {
         <div class='navbar-start'>
           {links.map(
             ({ href, text }, index): JSX.Element => (
-              <a
-                key={index}
-                href={href}
-                class='navbar-item'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
+              <a key={index} href={href} class='navbar-item'>
                 {text}
               </a>
             )
           )}
         </div>
-
         <div class='navbar-end'>
+          {social.map(
+            ({ href, icon, text }, index): JSX.Element => (
+              <a
+                key={index}
+                href={href}
+                class='navbar-item is-hidden-touch'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                <SvgIcon src={icon} alt={text} />
+              </a>
+            )
+          )}
           <div class='navbar-item'>
             <a
               href={homepage}
