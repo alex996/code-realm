@@ -5,6 +5,7 @@
   },
   "parser": "@typescript-eslint/parser",
   "extends": [
+    "eslint:recommended",
     "standard",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended"
@@ -27,6 +28,9 @@
     }
   },
   "rules": {
-    "@typescript-eslint/indent": "off"
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["class"] }],
+    "jsx-quotes": ["error", "prefer-single"]
   }
 }

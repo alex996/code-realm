@@ -7,3 +7,24 @@ $primary: $red;
 @import "~bulma/sass/utilities/_all.sass";
 
 @import "~bulma/sass/base/_all.sass";
+
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+
+@import "~bulma/sass/components/navbar.sass";
+
+html {
+  overflow-y: auto;
+}
+
+.navbar {
+  .navbar-brand {
+    .navbar-item:first-child {
+      padding: 0 $size-7;
+
+      img {
+        max-height: 2.5rem;
+      }
+    }
+  }
+}

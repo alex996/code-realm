@@ -1,55 +1,56 @@
-import logo from './logo.png'
 import { h, Fragment, JSX } from 'preact'
+import { useState, useEffect } from 'preact/hooks'
+import { Navbar } from './layout'
+
+interface PostI {
+  title: string
+  subtitle: string
+  slug: string
+  readingTime: string
+  tags: string[]
+  createdAt: string
+}
+
+interface PostProps extends PostI {
+  key?: string
+}
+
+const Post = ({ title, subtitle }: PostProps): JSX.Element => (
+  <div>
+    <h1>{title}</h1>
+    <h2>{subtitle}</h2>
+  </div>
+)
+
+const Posts = (): JSX.Element => {
+  const [posts, setPosts] = useState([])
+
+  useEffect((): void => {
+    (async (): Promise<void> => {
+      const posts = await (await fetch('/blog/index.json')).json()
+
+      setPosts(posts)
+    })()
+  }, [])
+
+  return (
+    <section>
+      {posts.map(
+        (post: PostI): JSX.Element => (
+          <Post key={post.slug} {...post} />
+        )
+      )}
+    </section>
+  )
+}
 
 const App = (): JSX.Element => (
   <Fragment>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
+    <header class='container'>
+      <Navbar />
     </header>
     <main>
-      <img src={logo} />
-      <section>
-        <h1>Code Realm</h1>
-        <h2>Modern web development blog</h2>
-      </section>
-      <section>
-        <ul>
-          <li>
-            <a href="#">
-              <h3>Building a UI library with next-gen JS</h3>
-              <h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-              </h4>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h3>The ultimate starter kit with Webpack</h3>
-              <h4>Lorem ipsum dolor sit amet, consectetur adipiscing</h4>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <h3>Building a microsite with modern JS</h3>
-              <h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-              </h4>
-            </a>
-          </li>
-        </ul>
-      </section>
+      <Posts />
     </main>
   </Fragment>
 )
