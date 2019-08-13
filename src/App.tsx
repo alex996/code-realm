@@ -15,11 +15,40 @@ interface PostProps extends PostI {
   key?: string
 }
 
-const Post = ({ title, subtitle }: PostProps): JSX.Element => (
-  <div>
-    <h1>{title}</h1>
-    <h2>{subtitle}</h2>
-  </div>
+const Post = ({
+  title,
+  subtitle,
+  createdAt,
+  readingTime,
+  tags
+}: PostProps): JSX.Element => (
+  <article class='box post'>
+    <h3 class='title is-4 is-spaced'>{title}</h3>
+
+    <h4 class='subtitle is-6'>{subtitle}</h4>
+
+    <div class='caption has-text-grey is-flex'>
+      <span class='item'>{createdAt}</span>
+
+      <span class='separator'>&bull;</span>
+
+      <span class='item'>{readingTime}</span>
+
+      <span class='separator'>&bull;</span>
+
+      <div class='item'>
+        <div class='tags'>
+          {tags.map(
+            (tag, index): JSX.Element => (
+              <span key={index} class='tag is-rounded'>
+                {tag}
+              </span>
+            )
+          )}
+        </div>
+      </div>
+    </div>
+  </article>
 )
 
 const Posts = (): JSX.Element => {
@@ -50,7 +79,24 @@ const App = (): JSX.Element => (
       <Navbar />
     </header>
     <main>
-      <Posts />
+      <section class='hero'>
+        <div class='hero-body'>
+          <div class='container'>
+            <div class='box'>
+              <h1 class='title is-spaced'>Modern web development</h1>
+              <h2 class='subtitle'>With next-gen JavaScript and React</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class='container' />
+
+      <section class='section'>
+        <div class='container'>
+          <Posts />
+        </div>
+      </section>
     </main>
   </Fragment>
 )

@@ -8,14 +8,31 @@ $primary: $red;
 
 @import "~bulma/sass/base/_all.sass";
 
+@import "~bulma/sass/components/navbar.sass";
+
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
 @import "~bulma/sass/elements/icon.sass";
+@import "~bulma/sass/elements/tag.sass";
+@import "~bulma/sass/elements/title.sass";
 
-@import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/layout/section.sass";
+
+$size-8: 0.5rem;
 
 html {
   overflow-y: auto;
+}
+
+header.container {
+  @include from($desktop) {
+    max-width: 900px;
+  }
+}
+
+main .container {
+  max-width: 700px;
 }
 
 .navbar {
@@ -31,11 +48,50 @@ html {
     }
   }
 
+  .navbar-start {
+    .navbar-item {
+      font-weight: 500;
+    }
+  }
+
   .navbar-item {
     .icon {
+      opacity: 0.8;
+
       img {
         height: $size-5;
       }
+    }
+  }
+}
+
+.box {
+  padding: 1rem 2rem;
+
+  @include until($desktop) {
+    padding: 1rem 0;
+  }
+}
+
+.post {
+  margin-bottom: $size-3;
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    margin-bottom: $size-5;
+  }
+
+  .caption {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -$size-8;
+
+    .item {
+      padding: $size-8;
     }
   }
 }
