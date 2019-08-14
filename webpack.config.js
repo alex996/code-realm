@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/explicit-function-return-type */
 const glob = require('glob')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -18,7 +18,10 @@ module.exports = (env, { mode }) => {
       filename: devMode ? '[name].js' : '[name].[contenthash].js'
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js']
+      extensions: ['.ts', '.tsx', '.js'],
+      alias: {
+        wouter: 'wouter/preact'
+      }
     },
     optimization: {
       minimizer: [
