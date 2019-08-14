@@ -22,7 +22,7 @@ const Post = ({
   readingTime,
   tags
 }: PostProps): JSX.Element => (
-  <article class='box post'>
+  <article class='post'>
     <h3 class='title is-4 is-spaced'>{title}</h3>
 
     <h4 class='subtitle is-6'>{subtitle}</h4>
@@ -63,13 +63,13 @@ const Posts = (): JSX.Element => {
   }, [])
 
   return (
-    <section>
+    <Fragment>
       {posts.map(
         (post: PostI): JSX.Element => (
           <Post key={post.slug} {...post} />
         )
       )}
-    </section>
+    </Fragment>
   )
 }
 
@@ -82,10 +82,8 @@ const App = (): JSX.Element => (
       <section class='hero'>
         <div class='hero-body'>
           <div class='container'>
-            <div class='box'>
-              <h1 class='title is-spaced'>Modern web development</h1>
-              <h2 class='subtitle'>With next-gen JavaScript and React</h2>
-            </div>
+            <h1 class='title is-spaced'>Modern web development</h1>
+            <h2 class='subtitle'>With next-gen JavaScript and React</h2>
           </div>
         </div>
       </section>

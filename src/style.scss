@@ -8,6 +8,8 @@ $primary: $red;
 
 @import "~bulma/sass/base/_all.sass";
 
+$navbar-breakpoint: $tablet;
+
 @import "~bulma/sass/components/navbar.sass";
 
 @import "~bulma/sass/elements/button.sass";
@@ -26,9 +28,7 @@ html {
 }
 
 header.container {
-  @include from($desktop) {
-    max-width: 900px;
-  }
+  max-width: 900px;
 }
 
 main .container {
@@ -65,23 +65,15 @@ main .container {
   }
 }
 
-.box {
-  padding: 1rem 2rem;
-
-  @include until($desktop) {
-    padding: 1rem 0;
-  }
-}
-
 .post {
-  margin-bottom: $size-3;
+  margin-bottom: $size-1;
 
   .title {
     font-size: 1.6rem;
   }
 
   .subtitle {
-    margin-bottom: $size-5;
+    margin-bottom: $size-6;
   }
 
   .caption {

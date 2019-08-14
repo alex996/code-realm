@@ -76,7 +76,7 @@ const Navbar = (): JSX.Element => {
             <a
               key={index}
               href={href}
-              class='navbar-item is-hidden-desktop'
+              class='navbar-item is-hidden-tablet'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -114,7 +114,7 @@ const Navbar = (): JSX.Element => {
               <a
                 key={index}
                 href={href}
-                class='navbar-item is-hidden-touch'
+                class='navbar-item is-hidden-mobile'
                 rel='noopener noreferrer'
                 target='_blank'
               >
