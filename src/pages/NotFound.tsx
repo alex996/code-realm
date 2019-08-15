@@ -9,7 +9,7 @@ const NotFound = (): JSX.Element => (
 
         <h2 class='subtitle'>Nothing to see here.</h2>
 
-        <Link href='/' class='button is-primary is-outlined is-rounded'>
+        <Link href='/' class='button is-link is-outlined is-rounded'>
           Get back home
         </Link>
       </div>

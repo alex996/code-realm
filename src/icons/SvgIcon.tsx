@@ -1,13 +1,15 @@
 import { h, JSX } from 'preact'
 
 interface Props {
-  src: string
+  href: string
   alt: string
 }
 
-const SvgIcon = (props: Props): JSX.Element => (
+const SvgIcon = ({ href, alt }: Props): JSX.Element => (
   <span class='icon'>
-    <img {...props} />
+    <svg role='img' aria-label={alt}>
+      <use href={href} />
+    </svg>
   </span>
 )
 

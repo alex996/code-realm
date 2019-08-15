@@ -3,6 +3,7 @@ const glob = require('glob')
 const TerserPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
@@ -51,17 +52,28 @@ module.exports = (env, { mode }) => {
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
         },
         {
-          test: /\.(jpe?g|png|ico|svg)$/i,
+          test: /\.(jpe?g|png|ico)$/i,
           use: {
             loader: 'file-loader',
             options: {
               name: devMode ? '[name].[ext]' : '[name].[hash].[ext]'
             }
           }
+        },
+        {
+          test: /\.svg$/,
+          use: {
+            loader: 'svg-sprite-loader',
+            options: {
+              extract: true,
+              spriteFilename: devMode ? 'icons.svg' : 'icons.[hash].svg'
+            }
+          }
         }
       ]
     },
     plugins: [
+      new SpriteLoaderPlugin(),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[contenthash].css'
       }),

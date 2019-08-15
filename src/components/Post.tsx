@@ -24,9 +24,7 @@ const Post = ({
 }: PostProps): JSX.Element => (
   <article class='post'>
     <h3 class='title is-4 is-spaced'>
-      <Link href={`/blog/${slug}`} class='has-text-dark'>
-        {title}
-      </Link>
+      <Link href={`/blog/${slug}`}>{title}</Link>
     </h3>
 
     <h4 class='subtitle is-6'>{subtitle}</h4>

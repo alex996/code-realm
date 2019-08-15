@@ -80,7 +80,7 @@ const Navbar = (): JSX.Element => {
               rel='noopener noreferrer'
               target='_blank'
             >
-              <SvgIcon src={icon} alt={text} />
+              <SvgIcon href={icon} alt={text} />
             </a>
           )
         )}
@@ -118,7 +118,7 @@ const Navbar = (): JSX.Element => {
                 rel='noopener noreferrer'
                 target='_blank'
               >
-                <SvgIcon src={icon} alt={text} />
+                <SvgIcon href={icon} alt={text} />
               </a>
             )
           )}

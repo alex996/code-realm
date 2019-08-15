@@ -48,19 +48,17 @@ main .container {
     }
   }
 
-  .navbar-start {
-    .navbar-item {
-      font-weight: 500;
-    }
-  }
-
   .navbar-item {
     .icon {
-      opacity: 0.8;
-
-      img {
+      svg {
         height: $size-5;
+        fill: currentColor;
       }
+    }
+
+    &:hover,
+    &:focus {
+      color: $link;
     }
   }
 }
@@ -71,8 +69,13 @@ main .container {
   .title {
     font-size: 1.6rem;
 
-    a:hover {
-      text-decoration: underline;
+    a {
+      color: $grey-darker;
+
+      &:hover,
+      &:focus {
+        color: $link;
+      }
     }
   }
 
