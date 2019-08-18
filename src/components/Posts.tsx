@@ -1,12 +1,12 @@
 import { h, Fragment, JSX } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
-import { PostPreview } from '../types'
+import { PostPreview } from '../typings'
 import { Post } from './'
 
 const Posts = (): JSX.Element => {
   const [posts, setPosts] = useState([])
 
-  useEffect((): void => {
+  useEffect(() => {
     fetch('/blog/index.json')
       .then(res => res.json())
       .then(setPosts)

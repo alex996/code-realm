@@ -2,7 +2,7 @@ import { h, JSX } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
 import { Params } from 'wouter'
 import { Post } from '../components'
-import { PostDetails, HttpError } from '../types'
+import { PostDetails, HttpError } from '../typings'
 import { Error } from './'
 
 interface Props {

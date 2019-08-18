@@ -10,7 +10,7 @@ import {
   Minds
 } from '../icons'
 import { homepage, version } from '../../package.json'
-import logo from '../logo.png'
+import logo from '../assets/logo.png'
 
 const links = [
   {

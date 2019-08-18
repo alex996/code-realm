@@ -82,8 +82,8 @@ module.exports = (env, { mode }) => {
           paths: glob.sync('src/**/*', { nodir: true })
         }),
       new HtmlWebpackPlugin({
-        template: 'src/index.html',
-        favicon: 'src/favicon.ico'
+        template: 'src/assets/index.html',
+        favicon: 'src/assets/favicon.ico'
       }),
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'defer'

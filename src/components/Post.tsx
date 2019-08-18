@@ -1,6 +1,6 @@
 import { h, JSX } from 'preact'
 import { Link } from 'wouter'
-import { PostPreview } from '../types'
+import { PostPreview } from '../typings'
 
 interface PostProps extends PostPreview {
   key?: string
