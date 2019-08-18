@@ -18,7 +18,7 @@ const Post = ({
 }: PostProps): JSX.Element => (
   <article class={`post${preview ? ' is-preview' : ''}`}>
     {preview ? (
-      <h3 class='title is-4 is-spaced'>
+      <h3 class='title is-spaced'>
         <Link href={`/blog/${slug}`}>{title}</Link>
       </h3>
     ) : (
@@ -26,7 +26,7 @@ const Post = ({
     )}
 
     {preview ? (
-      <h4 class='subtitle is-6'>{subtitle}</h4>
+      <h4 class='subtitle'>{subtitle}</h4>
     ) : (
       <h2 class='subtitle'>{subtitle}</h2>
     )}
