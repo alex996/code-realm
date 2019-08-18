@@ -1,5 +1,6 @@
 import { h, JSX } from 'preact'
 import { useState } from 'preact/hooks'
+import { Link } from 'wouter'
 import {
   SvgIcon,
   YouTube,
@@ -67,9 +68,11 @@ const Navbar = (): JSX.Element => {
       aria-label='main navigation'
     >
       <div class='navbar-brand'>
-        <a class='navbar-item' href='/'>
-          <img src={logo} alt='Code Realm' />
-        </a>
+        <Link href='/'>
+          <a class='navbar-item'>
+            <img src={logo} alt='Code Realm' draggable={false} />
+          </a>
+        </Link>
 
         {social.map(
           ({ href, icon, text }, index): JSX.Element => (

@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-$red: #f34423;
-
-$primary: $red;
-
 @import "~bulma/sass/utilities/_all.sass";
 
 @import "~bulma/sass/base/_all.sass";
@@ -14,6 +10,7 @@ $navbar-breakpoint: $tablet;
 
 @import "~bulma/sass/elements/button.sass";
 @import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/content.sass";
 @import "~bulma/sass/elements/icon.sass";
 @import "~bulma/sass/elements/tag.sass";
 @import "~bulma/sass/elements/title.sass";
@@ -38,11 +35,11 @@ main .container {
 .navbar {
   .navbar-brand {
     .navbar-item:first-child {
-      @include from($desktop) {
+      @include from($navbar-breakpoint) {
         padding: 0 $size-7;
 
         img {
-          max-height: $size-2;
+          max-height: 2.75rem;
         }
       }
     }
@@ -64,11 +61,17 @@ main .container {
 }
 
 .post {
-  margin-bottom: $size-1;
+  &.is-preview {
+    &:not(:last-child) {
+      margin-bottom: $size-1;
+    }
+
+    .title {
+      font-size: 1.6rem;
+    }
+  }
 
   .title {
-    font-size: 1.6rem;
-
     a {
       color: $grey-darker;
 
@@ -91,6 +94,17 @@ main .container {
 
     .item {
       padding: $size-8;
+    }
+  }
+}
+
+.post-page {
+  .section:nth-child(2) {
+    padding-top: 0;
+
+    .content {
+      font-size: 1.1em;
+      line-height: 1.8;
     }
   }
 }

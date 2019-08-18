@@ -1,23 +1,22 @@
 import { h, Fragment, JSX } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
-import Post, { PostI } from './Post'
+import { PostPreview } from '../types'
+import { Post } from './'
 
 const Posts = (): JSX.Element => {
   const [posts, setPosts] = useState([])
 
   useEffect((): void => {
-    (async (): Promise<void> => {
-      const posts = await (await fetch('/blog/index.json')).json()
-
-      setPosts(posts)
-    })()
+    fetch('/blog/index.json')
+      .then(res => res.json())
+      .then(setPosts)
   }, [])
 
   return (
     <Fragment>
       {posts.map(
-        (post: PostI): JSX.Element => (
-          <Post key={post.slug} {...post} />
+        (post: PostPreview): JSX.Element => (
+          <Post preview key={post.slug} {...post} />
         )
       )}
     </Fragment>

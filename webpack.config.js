@@ -95,7 +95,7 @@ module.exports = (env, { mode }) => {
       compress: true,
       historyApiFallback: true,
       proxy: {
-        '/blog': 'http://localhost:5000'
+        '/blog/*.json': 'http://localhost:5000'
       }
     }
   }

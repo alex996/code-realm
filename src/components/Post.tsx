@@ -1,17 +1,10 @@
 import { h, JSX } from 'preact'
 import { Link } from 'wouter'
+import { PostPreview } from '../types'
 
-export interface PostI {
-  title: string
-  subtitle: string
-  slug: string
-  readingTime: string
-  tags: string[]
-  createdAt: string
-}
-
-interface PostProps extends PostI {
+interface PostProps extends PostPreview {
   key?: string
+  preview?: boolean
 }
 
 const Post = ({
@@ -20,14 +13,23 @@ const Post = ({
   subtitle,
   createdAt,
   readingTime,
-  tags
+  tags,
+  preview = false
 }: PostProps): JSX.Element => (
-  <article class='post'>
-    <h3 class='title is-4 is-spaced'>
-      <Link href={`/blog/${slug}`}>{title}</Link>
-    </h3>
+  <article class={`post${preview ? ' is-preview' : ''}`}>
+    {preview ? (
+      <h3 class='title is-4 is-spaced'>
+        <Link href={`/blog/${slug}`}>{title}</Link>
+      </h3>
+    ) : (
+      <h1 class='title is-spaced'>{title}</h1>
+    )}
 
-    <h4 class='subtitle is-6'>{subtitle}</h4>
+    {preview ? (
+      <h4 class='subtitle is-6'>{subtitle}</h4>
+    ) : (
+      <h2 class='subtitle'>{subtitle}</h2>
+    )}
 
     <div class='caption has-text-grey is-flex'>
       <span class='item'>{createdAt}</span>
