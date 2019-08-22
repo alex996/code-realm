@@ -29,7 +29,7 @@
     "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.10.1",
+    "@fortawesome/fontawesome-free": "^5.10.2",
     "bulma": "^0.7.5",
     "preact": "^10.0.0-rc.1",
     "wouter": "^2.2.0"
@@ -45,13 +45,13 @@
     "commitizen": "^4.0.3",
     "css-loader": "^3.2.0",
     "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.1.0",
-    "eslint-config-standard": "^13.0.1",
+    "eslint": "^6.2.1",
+    "eslint-config-standard": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.1",
     "fecha": "^3.0.3",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^4.0.0-beta.8",
@@ -71,7 +71,7 @@
     "retext-english": "^3.0.3",
     "retext-stringify": "^2.0.3",
     "rimraf": "^3.0.0",
-    "sass-loader": "^7.2.0",
+    "sass-loader": "^7.3.1",
     "script-ext-html-webpack-plugin": "^2.1.4",
     "serve": "^11.1.0",
     "svg-sprite-loader": "^4.1.6",
@@ -80,7 +80,7 @@
     "unified": "^8.3.2",
     "vfile-reporter": "^6.0.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6",
+    "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
   },
   "config": {
