@@ -2,7 +2,7 @@
   "private": true,
   "name": "code-realm",
   "version": "1.0.0",
-  "description": "Web development with modern JS",
+  "description": "Web development with modern JavaScript",
   "main": "dist/main.js",
   "author": "Alex",
   "license": "MIT",

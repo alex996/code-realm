@@ -1,26 +1,39 @@
 # code-realm
 
-Web development with modern JS.
+Web development with modern JavaScript.
 
-## TODO
+## Backlog
 
+### Features
+
+- cache homepage posts (?)
+- blog page with a sorting widget
+- projects page with GH repos
+- about/contact page
+- color-coding for code snippets
+- color-coding for lang/framework tags
+
+### Tooling
+
+- mangle CSS classnames
 - storybook
-- stylelint
-- minify & tree-shake CSS
+- stylelint (?)
 - commitlint (?)
-- lint + format + unit test -> CircleCI (?)
-- `rollup.config.js` and `/scripts` -> TS
+- CI pipeline with lint + format + unit tests (?)
+- migrate `webpack.config.js` and `/scripts` to TS
 
-## MVP
+## Roadmap
+
+### MVP
 
 - landing page with posts
 - post details page
 - header with nav links
 - syntax highlight
 
-## Nice to Haves
+### Nice to Haves
 
-- portfolio page
+- portfolio & contact pages
 - post tags with icons
 - filter posts by tag(s)
 - search box
